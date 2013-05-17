@@ -39,6 +39,15 @@ public class LoginTest extends ActivityInstrumentationTestCase2<Login> {
 		assertFalse(solo.waitForActivity(Menu.class.getSimpleName()));
 		//solo.assertCurrentActivity("message", Login.class);
 	}
+	
+	public void testSuccess(){
+		getActivity();
+		solo.enterText(0, "admin");
+		solo.enterText(1, "admin");
+		solo.clickOnImageButton(0);
+		assertTrue(solo.waitForActivity(Menu.class.getSimpleName()));
+		//solo.assertCurrentActivity("message", Login.class);
+	}
 
 	protected void tearDown() throws Exception {
 		super.tearDown();
